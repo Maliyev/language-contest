@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#eeeef6">
+  <title>Наш родной язык в цифровом мире</title>
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #1c2030;
+      background: #eeeef6;
+      --accent: #303ebd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      padding: clamp(12px, 4vw, 48px);
+      background-image: radial-gradient(#d1d3e6 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    main {
+      width: min(100%, 58rem);
+      padding: clamp(20px, 5.5vw, 72px);
+      border: 1px solid #d8daeb;
+      border-top: 4px solid var(--accent);
+      border-radius: 6px 6px 16px 16px;
+      background: #fff;
+      box-shadow: 0 18px 55px #252c6c14;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1rem;
+      padding-block-end: clamp(20px, 4vw, 36px);
+      border-bottom: 1px solid #dfe1ee;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 5.7vw, 3.75rem);
+      font-weight: 750;
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--accent);
+    }
+
+    p {
+      max-width: 61ch;
+      margin: clamp(20px, 3.5vw, 32px) 0 0;
+      color: #41475a;
+      font-size: clamp(1rem, 2.25vw, 1.25rem);
+      line-height: 1.65;
+    }
+
+    .pixels {
+      --unit: clamp(10px, 2.7vw, 24px);
+      display: grid;
+      grid-template-columns: repeat(4, var(--unit));
+      grid-template-rows: repeat(4, var(--unit));
+      gap: 3px;
+    }
+
+    .pixels i {
+      border-radius: 2px;
+      background: #e9eaff;
+    }
+
+    .pixels i:nth-child(4n + 1) {
+      background: #c5caff;
+    }
+
+    .pixels i:is(:nth-child(3), :nth-child(5), :nth-child(10), :nth-child(12), :nth-child(15)) {
+      background: var(--accent);
+    }
+
+    .pixels i:is(:nth-child(1), :nth-child(8), :nth-child(13), :nth-child(16)) {
+      visibility: hidden;
+    }
+
+    @media (max-width: 37.5rem) {
+      header {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.9rem;
+      }
+
+      .pixels {
+        grid-row: 1;
+        justify-self: start;
+      }
+
+      h1 {
+        letter-spacing: -0.045em;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      h1, p {
+        animation: reveal 600ms ease-out both;
+      }
+
+      p {
+        animation-delay: 100ms;
+      }
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Наш родной язык <span>в цифровом мире</span></h1>
+      <div class="pixels" aria-hidden="true">
+        <i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i>
+      </div>
+    </header>
+    <p>Здравствуйте, добрый день. Завтра вы сможете принять участие в конкурсе под названием „Наш родной язык в цифровом мире“ в составе команды из 5 человек. Более подробная информация будет представлена завтра в 10:30, тогда же будет дано задание на первый день. Победители проекта получат призы.</p>
+  </main>
+</body>
+</html>
